@@ -42,11 +42,6 @@ function App() {
                 <option value="small">Small (Warp)</option>
               </select>
             </div>
-
-            <div className="field-checkbox">
-              <input type="checkbox" id="pok-checkbox" />
-              <label htmlFor="pok-checkbox">Prophecy of Kings</label>
-            </div>
           </div>
 
           <div className="sidebar-section">
