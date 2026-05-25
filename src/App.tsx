@@ -79,43 +79,43 @@ function App() {
                 playerLocations={grids["4player"].normal.playerLocations}
                 redLocations={grids["4player"].normal.redLocations}
               />
-            </div>
 
-            <div className="instructions">
-              <p>
-                This setup uses the "Brave the void" pattern from the base game
-                and mixes in guaranteed tiles for balance. It aims to allow
-                enough wormholes for strategic use whilst avoiding wormhole
-                spam.
-              </p>
-              <ul>
-                <li>
-                  Select 20 blue tiles at random, but make sure to include some
-                  or all of the following:
-                  <ul>
-                    <li>Atlas (Beta Wormhole)</li>
-                    <li>Lodor (Alpha Wormhole)</li>
-                    <li>Primor (Legendary)</li>
-                    <li>Hope's End (Legendary)</li>
-                    <li>Quann (Beta Wormhole)</li>
-                  </ul>
-                </li>
-                <li>
-                  Select the following 12 red tiles:
-                  <ul>
-                    <li>Cormund (Gravity Rift)</li>
-                    <li>Everra (Nebula)</li>
-                    <li>1× Alpha Wormhole</li>
-                    <li>1× Asteroid Field</li>
-                    <li>1× Asteroid Field with Alpha Wormhole</li>
-                    <li>1× Beta Wormhole</li>
-                    <li>3× Empty Space</li>
-                    <li>1× Gravity Rift</li>
-                    <li>1× Nebula</li>
-                    <li>1× Supernova</li>
-                  </ul>
-                </li>
-              </ul>
+              <div className="instructions">
+                <p>
+                  This setup uses the "Brave the void" pattern from the base
+                  game and mixes in guaranteed tiles for balance. It aims to
+                  allow enough wormholes for strategic use whilst avoiding
+                  wormhole spam.
+                </p>
+                <ul>
+                  <li>
+                    Select 20 blue tiles at random, but make sure to include
+                    some or all of the following:
+                    <ul>
+                      <li>Atlas (Beta Wormhole)</li>
+                      <li>Lodor (Alpha Wormhole)</li>
+                      <li>Primor (Legendary)</li>
+                      <li>Hope's End (Legendary)</li>
+                      <li>Quann (Beta Wormhole)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Select the following 12 red tiles:
+                    <ul>
+                      <li>Cormund (Gravity Rift)</li>
+                      <li>Everra (Nebula)</li>
+                      <li>1x Alpha Wormhole</li>
+                      <li>1x Asteroid Field</li>
+                      <li>1x Asteroid Field with Alpha Wormhole</li>
+                      <li>1x Beta Wormhole</li>
+                      <li>3x Empty Space</li>
+                      <li>1x Gravity Rift</li>
+                      <li>1x Nebula</li>
+                      <li>1x Supernova</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </section>
 
@@ -128,6 +128,41 @@ function App() {
                 playerLocations={new Set([1, 4, 28, 31])}
                 redLocations={new Set([6, 8, 11, 12, 15, 17, 20, 21, 24, 26])}
               />
+
+              <div className="instructions">
+                <p>
+                  This horizontal setup uses 6 less tiles (4 blue and 2 red)
+                  than the normal setup. There are still some guaranteed tiles
+                  for balance, but the red tile pattern often leads to more
+                  territory disputes.
+                </p>
+                <ul>
+                  <li>
+                    Select 16 blue tiles at random, but the recommended ones to
+                    include are:
+                    <ul>
+                      <li>Atlas (Beta Wormhole)</li>
+                      <li>Lodor (Alpha Wormhole)</li>
+                      <li>Primor (Legendary)</li>
+                      <li>Hope's End (Legendary)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    The recommended 10 red tiles:
+                    <ul>
+                      <li>Cormund (Gravity Rift)</li>
+                      <li>Everra (Nebula)</li>
+                      <li>2x Asteroid Field</li>
+                      <li>1x Asteroid Field with Alpha Wormhole</li>
+                      <li>1x Beta Wormhole</li>
+                      <li>1x Empty Space</li>
+                      <li>1x Gravity Rift</li>
+                      <li>1x Nebula</li>
+                      <li>1x Supernova</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </section>
         </main>
