@@ -9,7 +9,7 @@ interface HexGridProps {
 
 /**
  * Returns all cube coordinates (q, r, s) within `radius` rings of the origin.
- * A radius-3 grid produces exactly 1 + 3*3*4/2 + ... = 37 hexes.
+ * A radius-3 grid produces exactly 37 hexes.
  */
 function hexesInRadius(radius: number): { q: number; r: number }[] {
   const hexes: { q: number; r: number }[] = [];
@@ -49,6 +49,22 @@ function hexCorners(cx: number, cy: number, size: number): string {
   }).join(" ");
 }
 
+// ── Tile colours ──────────────────────────────────────────────────────────────
+const COLOR_DEFAULT = "#1e2d4a"; // deep space blue
+const COLOR_MECATOL = "#c9a84c"; // Mecatol gold
+const COLOR_PLAYER  = "#3d8b5e"; // rich green home systems
+const COLOR_RED     = "#7a1f17"; // red anomaly tiles
+const STROKE_DEFAULT = "#2e4a70";
+const STROKE_MECATOL = "#e6c87a";
+const STROKE_PLAYER  = "#5db87e";
+const STROKE_RED     = "#c04030";
+
+// Radial highlight — a lighter inner glow rendered as a second, smaller polygon
+const HIGHLIGHT_DEFAULT = "rgba(100, 160, 255, 0.12)";
+const HIGHLIGHT_MECATOL = "rgba(255, 230, 140, 0.18)";
+const HIGHLIGHT_PLAYER  = "rgba(100, 220, 150, 0.15)";
+const HIGHLIGHT_RED     = "rgba(255, 100, 80, 0.12)";
+
 const RADIUS = 3; // radius-3 → 37 tiles
 
 const HexGrid: React.FC<HexGridProps> = ({
@@ -69,6 +85,9 @@ const HexGrid: React.FC<HexGridProps> = ({
   const maxY = Math.max(...ys) + hexSize + padding / 2;
   const viewBox = `${minX} ${minY} ${maxX - minX} ${maxY - minY}`;
 
+  // Unique id prefix so multiple grids on the page don't clash
+  const gradId = React.useId().replace(/:/g, "");
+
   return (
     <svg
       viewBox={viewBox}
@@ -80,37 +99,80 @@ const HexGrid: React.FC<HexGridProps> = ({
       }}
       xmlns="http://www.w3.org/2000/svg"
     >
+      <defs>
+        {hexes.map(({ q, r }, i) => {
+          const { x, y } = hexToPixel(q, r, hexSize);
+          const isCenter = q === 0 && r === 0;
+          const tileNumber = i + 1;
+          const isPlayer = playerLocations?.has(tileNumber) ?? false;
+          const isRed    = redLocations?.has(tileNumber) ?? false;
+
+          let highlight = HIGHLIGHT_DEFAULT;
+          if (isCenter)       highlight = HIGHLIGHT_MECATOL;
+          else if (isPlayer)  highlight = HIGHLIGHT_PLAYER;
+          else if (isRed)     highlight = HIGHLIGHT_RED;
+
+          // Radial gradient centred on each hex
+          const id = `rg-${gradId}-${i}`;
+          return (
+            <radialGradient
+              key={id}
+              id={id}
+              cx={x}
+              cy={y}
+              r={hexSize * 0.85}
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0%"   stopColor={highlight} />
+              <stop offset="100%" stopColor="rgba(0,0,0,0)" />
+            </radialGradient>
+          );
+        })}
+      </defs>
+
       {hexes.map(({ q, r }, i) => {
         const { x, y } = hexToPixel(q, r, hexSize);
-        const isCenter = q === 0 && r === 0;
+        const isCenter   = q === 0 && r === 0;
         const tileNumber = i + 1;
-        let color = "#3a6186"; // default tile color
-        if (isCenter) {
-          color = "#c0a060";
-        } else if (playerLocations?.has(tileNumber)) {
-          color = "#4a9e5c";
-        } else if (redLocations?.has(tileNumber)) {
-          color = "#db2118";
-        }
+        const isPlayer   = playerLocations?.has(tileNumber) ?? false;
+        const isRed      = redLocations?.has(tileNumber) ?? false;
+
+        let fill   = COLOR_DEFAULT;
+        let stroke = STROKE_DEFAULT;
+        if (isCenter)      { fill = COLOR_MECATOL; stroke = STROKE_MECATOL; }
+        else if (isPlayer) { fill = COLOR_PLAYER;  stroke = STROKE_PLAYER;  }
+        else if (isRed)    { fill = COLOR_RED;      stroke = STROKE_RED;    }
+
+        const gradientId = `rg-${gradId}-${i}`;
+        const innerSize  = hexSize - 2;
 
         return (
           <g key={i}>
+            {/* Base hex */}
             <polygon
-              points={hexCorners(x, y, hexSize - 2)}
-              fill={color}
-              stroke="#1a2a3a"
+              points={hexCorners(x, y, innerSize)}
+              fill={fill}
+              stroke={stroke}
               strokeWidth={1.5}
             />
+            {/* Radial inner highlight overlay */}
+            <polygon
+              points={hexCorners(x, y, innerSize)}
+              fill={`url(#${gradientId})`}
+              stroke="none"
+            />
+            {/* Label */}
             <text
               x={x}
               y={y}
               textAnchor="middle"
               dominantBaseline="central"
               fontSize={hexSize * 0.28}
-              fill="#fff"
+              fill={isCenter ? "#1a0e00" : "#c8daf0"}
+              fontWeight={isCenter ? "bold" : "normal"}
               style={{ userSelect: "none", pointerEvents: "none" }}
             >
-              {isCenter ? "Mecatol Rex" : i + 1}
+              {isCenter ? "Mecatol Rex" : tileNumber}
             </text>
           </g>
         );
