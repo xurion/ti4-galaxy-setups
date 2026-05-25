@@ -1,5 +1,5 @@
 /* =========================================================
-   TI4 Galaxy Generator — Component Styles
+   TI4 Galaxy Setups — Component Styles
    ========================================================= */
 
 /* ---------- Page shell ---------- */
@@ -104,7 +104,9 @@
   font-size: 0.9rem;
   font-family: var(--font-body);
   cursor: pointer;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238a6e28' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
@@ -149,7 +151,10 @@
   background: var(--color-surface-alt);
   cursor: pointer;
   position: relative;
-  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
 }
 
 .field-checkbox input[type="checkbox"]:checked {
@@ -159,7 +164,7 @@
 }
 
 .field-checkbox input[type="checkbox"]:checked::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 4px;
   top: 1px;
@@ -196,13 +201,21 @@
   height: 14px;
   border-radius: 3px;
   flex-shrink: 0;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.legend-swatch--default  { background: var(--color-hex-default); }
-.legend-swatch--mecatol  { background: var(--color-hex-mecatol); }
-.legend-swatch--player   { background: var(--color-hex-player); }
-.legend-swatch--red      { background: var(--color-hex-red); }
+.legend-swatch--default {
+  background: var(--color-hex-default);
+}
+.legend-swatch--mecatol {
+  background: var(--color-hex-mecatol);
+}
+.legend-swatch--player {
+  background: var(--color-hex-player);
+}
+.legend-swatch--red {
+  background: var(--color-hex-red);
+}
 
 /* ---------- Main content area ---------- */
 .main-content {

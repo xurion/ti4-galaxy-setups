@@ -15,7 +15,7 @@ function App() {
     <div className="app">
       {/* ── Header ── */}
       <header className="app-header">
-        <h1 className="app-title">TI4 Galaxy Generator</h1>
+        <h1 className="app-title">TI4 Galaxy Setups</h1>
         <p className="app-subtitle">Twilight Imperium 4th Edition</p>
       </header>
 
@@ -76,7 +76,9 @@ function App() {
         <main className="main-content">
           <section className="galaxy-section">
             <h2 className="galaxy-section-heading">4 Players — Normal</h2>
-            <p className="galaxy-section-sub">Brave the Void pattern · balanced wormholes</p>
+            <p className="galaxy-section-sub">
+              Brave the Void pattern · balanced wormholes
+            </p>
 
             <div className="hex-grid-wrapper">
               <HexGrid
@@ -87,14 +89,15 @@ function App() {
 
             <div className="instructions">
               <p>
-                This setup uses the "Brave the void" pattern from the base game and
-                mixes in guaranteed tiles for balance. It aims to allow enough
-                wormholes for strategic use whilst avoiding wormhole spam.
+                This setup uses the "Brave the void" pattern from the base game
+                and mixes in guaranteed tiles for balance. It aims to allow
+                enough wormholes for strategic use whilst avoiding wormhole
+                spam.
               </p>
               <ul>
                 <li>
-                  Select 20 blue tiles at random, but make sure to include some or all
-                  of the following:
+                  Select 20 blue tiles at random, but make sure to include some
+                  or all of the following:
                   <ul>
                     <li>Atlas (Beta Wormhole)</li>
                     <li>Lodor (Alpha Wormhole)</li>
