@@ -1,15 +1,6 @@
 import "./App.css";
-import HexGrid from "./HexGrid";
-import HexRect from "./HexGridRect";
-
-const grids = {
-  "4player": {
-    normal: {
-      playerLocations: new Set([3, 10, 28, 35]),
-      redLocations: new Set([6, 7, 8, 11, 14, 17, 21, 24, 27, 30, 31, 32]),
-    },
-  },
-};
+import BraveTheVoid from "./BraveTheVoid";
+import Rectangle from "./Rectangle";
 
 function App() {
   return (
@@ -75,10 +66,7 @@ function App() {
             <p className="galaxy-section-sub">37 tiles</p>
 
             <div className="hex-grid-wrapper">
-              <HexGrid
-                playerLocations={grids["4player"].normal.playerLocations}
-                redLocations={grids["4player"].normal.redLocations}
-              />
+              <BraveTheVoid />
 
               <div className="instructions">
                 <p>
@@ -124,7 +112,7 @@ function App() {
             <p className="galaxy-section-sub">31 tiles</p>
 
             <div className="hex-grid-wrapper">
-              <HexRect />
+              <Rectangle />
 
               <div className="instructions">
                 <p>
