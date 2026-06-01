@@ -262,3 +262,25 @@
     padding: 1rem 1rem 0.75rem;
   }
 }
+
+.grid {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.player-hex {
+  fill: var(--color-hex-player);
+}
+
+.red-hex {
+  fill: var(--color-hex-red);
+}
+
+.blue-hex {
+  fill: var(--color-hex-blue);
+}
+
+.mecatol-hex {
+  fill: var(--color-hex-mecatol);
+}

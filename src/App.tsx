@@ -1,6 +1,6 @@
 import "./App.css";
 import HexGrid from "./HexGrid";
-import HexGridRect from "./HexGridRect";
+import HexRect from "./HexGridRect";
 
 const grids = {
   "4player": {
@@ -124,10 +124,7 @@ function App() {
             <p className="galaxy-section-sub">31 tiles</p>
 
             <div className="hex-grid-wrapper">
-              <HexGridRect
-                playerLocations={new Set([1, 4, 28, 31])}
-                redLocations={new Set([6, 8, 11, 12, 15, 17, 20, 21, 24, 26])}
-              />
+              <HexRect />
 
               <div className="instructions">
                 <p>

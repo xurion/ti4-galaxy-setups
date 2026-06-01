@@ -19,11 +19,12 @@
   --color-text-muted: #5a6f90;
   --color-text-bright: #1a2440;
 
-  --color-hex-default: #1e2d4a;
+  --color-hex-default: #1e2d4a; /* TODO: Remove this in favour of hex blue */
   --color-hex-stroke: #2e4a70;
   --color-hex-mecatol: #c9a84c;
   --color-hex-player: #3d8b5e;
   --color-hex-red: #9e2a20;
+  --color-hex-blue: #1e2d4a;
 
   --font-heading: "Georgia", "Times New Roman", serif;
   --font-body: system-ui, -apple-system, sans-serif;
