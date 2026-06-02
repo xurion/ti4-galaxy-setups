@@ -1,6 +1,7 @@
 import "./App.css";
-import BraveTheVoid from "./BraveTheVoid";
-import Rectangle from "./Rectangle";
+import BraveTheVoid from "./setups/BraveTheVoid";
+import Rectangle from "./setups/Rectangle";
+import RectanglePlus from "./setups/RectanglePlus";
 
 function App() {
   return (
@@ -141,6 +142,50 @@ function App() {
                       <li>1x Asteroid Field with Alpha Wormhole</li>
                       <li>1x Beta Wormhole</li>
                       <li>1x Empty Space</li>
+                      <li>1x Gravity Rift</li>
+                      <li>1x Nebula</li>
+                      <li>1x Supernova</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="galaxy-section-heading">Rectangle Plus</h2>
+            <p className="galaxy-section-sub">4 players | 37 tiles</p>
+
+            <div className="hex-grid-wrapper">
+              <RectanglePlus />
+
+              <div className="instructions">
+                <p>
+                  Uses the Rectangle setup with the 37 tiles of the Brave the
+                  Void setup.
+                </p>
+                <ul>
+                  <li>
+                    Select 20 blue tiles at random, but make sure to include
+                    some or all of the following:
+                    <ul>
+                      <li>Atlas (Beta Wormhole)</li>
+                      <li>Lodor (Alpha Wormhole)</li>
+                      <li>Primor (Legendary)</li>
+                      <li>Hope's End (Legendary)</li>
+                      <li>Quann (Beta Wormhole)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Select the following 12 red tiles:
+                    <ul>
+                      <li>Cormund (Gravity Rift)</li>
+                      <li>Everra (Nebula)</li>
+                      <li>1x Alpha Wormhole</li>
+                      <li>1x Asteroid Field</li>
+                      <li>1x Asteroid Field with Alpha Wormhole</li>
+                      <li>1x Beta Wormhole</li>
+                      <li>3x Empty Space</li>
                       <li>1x Gravity Rift</li>
                       <li>1x Nebula</li>
                       <li>1x Supernova</li>

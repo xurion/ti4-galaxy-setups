@@ -1,5 +1,5 @@
-import Grid from "./common/Grid";
-import { BlueTile, MecatolTile, PlayerTile, RedTile } from "./common/Tiles";
+import Grid from "../common/Grid";
+import { BlueTile, MecatolTile, PlayerTile, RedTile } from "../common/Tiles";
 
 const BraveTheVoid = () => {
   return (
