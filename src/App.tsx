@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import BraveTheVoid from "./setups/BraveTheVoid";
 import Compact from "./setups/Compact";
+import Gaps from "./setups/Gaps";
 import Manta from "./setups/Manta";
 import Rectangle from "./setups/Rectangle";
 import RectanglePlus from "./setups/RectanglePlus";
@@ -375,6 +376,43 @@ function App() {
                       <li>1x Gravity Rift</li>
                       <li>1x Nebula</li>
                       <li>1x Supernova</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="galaxy-section-heading">Gaps</h2>
+            <p className="galaxy-section-sub">4 players | 29 tiles</p>
+
+            <div className="hex-grid-wrapper">
+              <Gaps />
+
+              <div className="instructions">
+                <p>
+                  Similar to the Rectangle setup, flipped 90 degrees and has a
+                  further 2 missing tiles on either side of Mecatol Rex.
+                </p>
+                <ul>
+                  <li>
+                    Select 14 blue tiles at random, but the recommended ones to
+                    include are:
+                    <ul>
+                      <li>Atlas (Beta Wormhole)</li>
+                      <li>Lodor (Alpha Wormhole)</li>
+                      <li>Primor (Legendary)</li>
+                      <li>Hope's End (Legendary)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Select 6 red tiles at random, but make sure to include:
+                    <ul>
+                      <li>Cormund (Gravity Rift)</li>
+                      <li>Everra (Nebula)</li>
+                      <li>1x Alpha Wormhole</li>
+                      <li>1x Beta Wormhole</li>
                     </ul>
                   </li>
                 </ul>
