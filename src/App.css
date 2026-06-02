@@ -19,9 +19,6 @@
     rgba(238, 241, 247, 0.95) 100%
   );
   backdrop-filter: blur(4px);
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 .app-title {
@@ -58,9 +55,9 @@
   padding: 1.75rem 1.5rem;
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   position: sticky;
-  top: 80px;
+  top: 0;
   overflow-y: auto;
 }
 
