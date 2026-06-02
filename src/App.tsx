@@ -3,6 +3,7 @@ import BraveTheVoid from "./setups/BraveTheVoid";
 import Rectangle from "./setups/Rectangle";
 import RectanglePlus from "./setups/RectanglePlus";
 import TradeWars from "./setups/TradeWars";
+import { Triangle } from "./setups/Triangle";
 
 function App() {
   return (
@@ -106,6 +107,41 @@ function App() {
                     </ul>
                     You may wish to remove the empty space tiles, depending on
                     your game preference.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="galaxy-section">
+            <h2 className="galaxy-section-heading">Triangle</h2>
+            <p className="galaxy-section-sub">3 players | 28 tiles</p>
+
+            <div className="hex-grid-wrapper">
+              <Triangle />
+
+              <div className="instructions">
+                <p>TBA</p>
+                <ul>
+                  <li>
+                    Select 18 blue tiles at random, but make sure to include
+                    some or all of the following:
+                    <ul>
+                      <li>Atlas (Beta Wormhole)</li>
+                      <li>Lodor (Alpha Wormhole)</li>
+                      <li>Primor (Legendary)</li>
+                      <li>Hope's End (Legendary)</li>
+                      <li>Quann (Beta Wormhole)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Select 6 red tiles at random, but make sure to include:
+                    <ul>
+                      <li>Cormund (Gravity Rift)</li>
+                      <li>Everra (Nebula)</li>
+                      <li>1x Alpha Wormhole</li>
+                      <li>1x Beta Wormhole</li>
+                    </ul>
                   </li>
                 </ul>
               </div>
