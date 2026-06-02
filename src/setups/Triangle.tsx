@@ -1,7 +1,7 @@
 import Grid from "../common/Grid";
 import { BlueTile, MecatolTile, PlayerTile, RedTile } from "../common/Tiles";
 
-export const Triangle = () => {
+export const TriangleLines = () => {
   return (
     <Grid viewBox="-58 -45 116 108">
       <>
@@ -51,7 +51,7 @@ export const Triangle = () => {
   );
 };
 
-export const Triangle2 = () => {
+export const TriangleRing = () => {
   return (
     <Grid viewBox="-58 -45 116 108">
       <>

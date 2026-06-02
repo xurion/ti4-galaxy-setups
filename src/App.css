@@ -233,6 +233,59 @@
   font-size: 0.84rem;
 }
 
+/* ---------- Variant toggle ---------- */
+
+.variant-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.variant-toggle-container p {
+  margin-bottom: 0;
+}
+
+.variant-toggle {
+  margin-bottom: 0;
+  flex-shrink: 0;
+  display: inline-flex;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-alt);
+}
+
+.variant-toggle-btn {
+  padding: 0.4rem 1.1rem;
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition);
+  user-select: none;
+}
+
+.variant-toggle-btn:hover:not(.variant-toggle-btn--active) {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.variant-toggle-btn--active {
+  background: var(--color-gold);
+  color: #fff;
+  font-weight: 600;
+  cursor: default;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 /* ---------- Divider ---------- */
 .section-divider {
   border: none;

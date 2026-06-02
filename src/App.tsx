@@ -1,11 +1,14 @@
+import { useState } from "react";
 import "./App.css";
 import BraveTheVoid from "./setups/BraveTheVoid";
 import Rectangle from "./setups/Rectangle";
 import RectanglePlus from "./setups/RectanglePlus";
 import TradeWars from "./setups/TradeWars";
-import { Triangle } from "./setups/Triangle";
+import { TriangleLines, TriangleRing } from "./setups/Triangle";
 
 function App() {
+  const [showTriangleLines, setShowTriangleLines] = useState(true);
+
   return (
     <div className="app">
       {/* ── Header ── */}
@@ -118,10 +121,31 @@ function App() {
             <p className="galaxy-section-sub">3 players | 28 tiles</p>
 
             <div className="hex-grid-wrapper">
-              <Triangle />
+              {showTriangleLines ? <TriangleLines /> : <TriangleRing />}
+
+              <div className="variant-toggle-container">
+                <div className="variant-toggle">
+                  <button
+                    className={`variant-toggle-btn${showTriangleLines ? " variant-toggle-btn--active" : ""}`}
+                    onClick={() => setShowTriangleLines(true)}
+                  >
+                    Lines
+                  </button>
+                  <button
+                    className={`variant-toggle-btn${!showTriangleLines ? " variant-toggle-btn--active" : ""}`}
+                    onClick={() => setShowTriangleLines(false)}
+                  >
+                    Ring
+                  </button>
+                </div>
+              </div>
 
               <div className="instructions">
-                <p>TBA</p>
+                <p>
+                  Players start at the three points of the triangle. One variant
+                  has two red tiles in the path towards Mecatol Rex, the other
+                  has red tiles surrounding Mecatol Rex.
+                </p>
                 <ul>
                   <li>
                     Select 18 blue tiles at random, but make sure to include
