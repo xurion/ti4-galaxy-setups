@@ -155,6 +155,9 @@
 .legend-swatch--red {
   background: var(--color-hex-red);
 }
+.legend-swatch--trade {
+  background: var(--color-hex-trade);
+}
 
 /* ---------- Main content area ---------- */
 .main-content {
@@ -262,7 +265,8 @@
 
 .grid {
   display: block;
-  margin: auto;
+  margin: 0 auto 20px;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -276,6 +280,10 @@
 
 .blue-hex {
   fill: var(--color-hex-blue);
+}
+
+.trade-hex {
+  fill: var(--color-hex-trade);
 }
 
 .mecatol-hex {

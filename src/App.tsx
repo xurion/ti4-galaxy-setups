@@ -2,6 +2,7 @@ import "./App.css";
 import BraveTheVoid from "./setups/BraveTheVoid";
 import Rectangle from "./setups/Rectangle";
 import RectanglePlus from "./setups/RectanglePlus";
+import TradeWars from "./setups/TradeWars";
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
             <div className="legend">
               <div className="legend-item">
                 <span className="legend-swatch legend-swatch--default" />
-                Blue system tile
+                Blue system
               </div>
               <div className="legend-item">
                 <span className="legend-swatch legend-swatch--mecatol" />
@@ -54,7 +55,11 @@ function App() {
               </div>
               <div className="legend-item">
                 <span className="legend-swatch legend-swatch--red" />
-                Red system tile
+                Red system
+              </div>
+              <div className="legend-item">
+                <span className="legend-swatch legend-swatch--trade" />
+                Trade system (Trade Wars only)
               </div>
             </div>
           </div>
@@ -62,6 +67,51 @@ function App() {
 
         {/* ── Main content ── */}
         <main className="main-content">
+          <section className="galaxy-section">
+            <h2 className="galaxy-section-heading">Trade Wars</h2>
+            <p className="galaxy-section-sub">2 players | 24 tiles</p>
+
+            <div className="hex-grid-wrapper">
+              <TradeWars />
+
+              <div className="instructions">
+                <p>
+                  Uses the{" "}
+                  <a
+                    href="https://boardgamegeek.com/thread/2114639/trade-wars-2-player-variant"
+                    target="_blank"
+                  >
+                    Trade Wars 2 player variant by Andy Norton
+                  </a>
+                  .
+                </p>
+                <ul>
+                  <li>
+                    Select 10 blue tiles at random, but make sure to include
+                    some or all of the following:
+                    <ul>
+                      <li>Atlas (Beta Wormhole)</li>
+                      <li>Lodor (Alpha Wormhole)</li>
+                      <li>Primor (Legendary)</li>
+                      <li>Hope's End (Legendary)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Select 8 8 red tiles at random, but make sure to include:
+                    <ul>
+                      <li>Cormund (Gravity Rift)</li>
+                      <li>Everra (Nebula)</li>
+                      <li>1x Alpha Wormhole</li>
+                      <li>1x Beta Wormhole</li>
+                    </ul>
+                    You may wish to remove the empty space tiles, depending on
+                    your game preference.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
           <section className="galaxy-section">
             <h2 className="galaxy-section-heading">Brave the Void</h2>
             <p className="galaxy-section-sub">4 players | 37 tiles</p>

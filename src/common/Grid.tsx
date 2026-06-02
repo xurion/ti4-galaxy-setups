@@ -7,7 +7,12 @@ const Grid = ({
   children: React.ReactElement;
   viewBox: string;
 }) => (
-  <HexGrid viewBox={viewBox} preserveAspectRatio="xMidYMid meet">
+  <HexGrid
+    viewBox={viewBox}
+    preserveAspectRatio="xMidYMid meet"
+    height=""
+    width=""
+  >
     <Layout flat origin={{ x: 0, y: 0 }} size={{ x: 10, y: 10 }} spacing={1.05}>
       {children}
     </Layout>

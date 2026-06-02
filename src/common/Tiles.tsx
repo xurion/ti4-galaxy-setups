@@ -14,6 +14,10 @@ export const BlueTile = (props: TileProps) => (
   <Hexagon {...props} className="blue-hex" />
 );
 
+export const TradeTile = (props: TileProps) => (
+  <Hexagon {...props} className="trade-hex" />
+);
+
 export const MecatolTile = (props: TileProps) => (
   <Hexagon {...props} className="mecatol-hex" />
 );

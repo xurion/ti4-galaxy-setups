@@ -25,6 +25,7 @@
   --color-hex-player: #3d8b5e;
   --color-hex-red: #9e2a20;
   --color-hex-blue: #1e2d4a;
+  --color-hex-trade: #5c2252;
 
   --font-heading: "Georgia", "Times New Roman", serif;
   --font-body: system-ui, -apple-system, sans-serif;
@@ -93,7 +94,6 @@ p {
 
 a {
   color: var(--color-gold);
-  text-decoration: none;
   transition: color var(--transition);
 }
 a:hover {
