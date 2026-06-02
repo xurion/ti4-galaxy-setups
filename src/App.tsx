@@ -62,8 +62,8 @@ function App() {
         {/* ── Main content ── */}
         <main className="main-content">
           <section className="galaxy-section">
-            <h2 className="galaxy-section-heading">4 Players — Normal</h2>
-            <p className="galaxy-section-sub">37 tiles</p>
+            <h2 className="galaxy-section-heading">Brave the Void</h2>
+            <p className="galaxy-section-sub">4 players | 37 tiles</p>
 
             <div className="hex-grid-wrapper">
               <BraveTheVoid />
@@ -108,8 +108,8 @@ function App() {
           </section>
 
           <section>
-            <h2 className="galaxy-section-heading">4 Players — Horizontal</h2>
-            <p className="galaxy-section-sub">31 tiles</p>
+            <h2 className="galaxy-section-heading">Rectangle</h2>
+            <p className="galaxy-section-sub">4 players | 31 tiles</p>
 
             <div className="hex-grid-wrapper">
               <Rectangle />
