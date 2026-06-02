@@ -15,7 +15,7 @@ function App() {
       <div className="app-body">
         {/* ── Sidebar ── */}
         <aside className="sidebar">
-          <div className="sidebar-section">
+          {/* <div className="sidebar-section">
             <p className="sidebar-section-title">Configuration</p>
 
             <div className="field">
@@ -35,7 +35,7 @@ function App() {
                 <option value="small">Small (Warp)</option>
               </select>
             </div>
-          </div>
+          </div> */}
 
           <div className="sidebar-section">
             <p className="sidebar-section-title">Legend</p>
