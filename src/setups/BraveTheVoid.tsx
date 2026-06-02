@@ -3,7 +3,7 @@ import { BlueTile, MecatolTile, PlayerTile, RedTile } from "../common/Tiles";
 
 const BraveTheVoid = () => {
   return (
-    <Grid viewBox="-60 -65 120 130">
+    <Grid viewBox="-59 -63 118 126">
       <>
         {/* Column 1 */}
         <BlueTile q={-3} r={0} s={1} />

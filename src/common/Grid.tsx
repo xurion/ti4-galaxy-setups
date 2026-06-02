@@ -9,7 +9,7 @@ const Grid = ({
 }) => (
   <HexGrid
     viewBox={viewBox}
-    preserveAspectRatio="xMidYMid meet"
+    preserveAspectRatio="xMidYMin meet"
     height=""
     width=""
   >
