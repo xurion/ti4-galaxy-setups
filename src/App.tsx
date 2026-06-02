@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import BraveTheVoid from "./setups/BraveTheVoid";
+import Compact from "./setups/Compact";
 import Rectangle from "./setups/Rectangle";
 import RectanglePlus from "./setups/RectanglePlus";
 import TradeWars from "./setups/TradeWars";
@@ -110,6 +111,42 @@ function App() {
                     </ul>
                     You may wish to remove the empty space tiles, depending on
                     your game preference.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="galaxy-section">
+            <h2 className="galaxy-section-heading">Compact</h2>
+            <p className="galaxy-section-sub">3 players | 19 tiles</p>
+
+            <div className="hex-grid-wrapper">
+              <Compact />
+
+              <div className="instructions">
+                <p>
+                  A smaller setup that makes it very easy for players to get to
+                  Mecatol Rex in the first round. A possible variant of this is
+                  to completed avoid using wormhole tiles.
+                </p>
+                <ul>
+                  <li>
+                    Select 12 blue tiles at random, but make sure to include
+                    some or all of the following:
+                    <ul>
+                      <li>Atlas (Beta Wormhole)</li>
+                      <li>Lodor (Alpha Wormhole)</li>
+                      <li>Primor (Legendary)</li>
+                      <li>Hope's End (Legendary)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Select 3 red tiles at random, but make sure to include:
+                    <ul>
+                      <li>1x Alpha Wormhole</li>
+                      <li>1x Beta Wormhole</li>
+                    </ul>
                   </li>
                 </ul>
               </div>
