@@ -3,7 +3,7 @@ import { BlueTile, MecatolTile, PlayerTile, RedTile } from "../common/Tiles";
 
 const RectanglePlus = () => {
   return (
-    <Grid viewBox="-50 -50 100 100">
+    <Grid viewBox="-75 -65 150 130">
       <>
         {/* Column 1 */}
         <BlueTile q={-4} r={1} s={1} />
