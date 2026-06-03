@@ -5,6 +5,7 @@ import {
   BalancedHexFivePlayer,
 } from "./setups/BalancedHex";
 import Compact from "./setups/Compact";
+import Diamond from "./setups/Diamond";
 import Gaps from "./setups/Gaps";
 import Manta from "./setups/Manta";
 import Rectangle from "./setups/Rectangle";
@@ -472,6 +473,45 @@ function App() {
                           <li>1x Gravity Rift</li>
                           <li>1x Nebula</li>
                           <li>1x Supernova</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Diamond</h2>
+                <p className="galaxy-section-sub">5 players | 31 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <Diamond />
+
+                  <div className="instructions">
+                    <p>
+                      Uses a diamond shape with slightly less blue tiles and
+                      significantly less red tiles than the Balanced Hex, yet
+                      maintains the usual 3-tile distance from Mecatol Rex.
+                    </p>
+                    <ul>
+                      <li>
+                        Select 19 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select 6 red tiles at random, but make sure to include:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
                         </ul>
                       </li>
                     </ul>
