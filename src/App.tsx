@@ -11,6 +11,7 @@ import { TriangleLines, TriangleRing } from "./setups/Triangle";
 
 function App() {
   const [showTriangleLines, setShowTriangleLines] = useState(true);
+  const [filteredMaps, setFilteredMaps] = useState<number>(0);
 
   return (
     <div className="app">
@@ -23,27 +24,23 @@ function App() {
       <div className="app-body">
         {/* ── Sidebar ── */}
         <aside className="sidebar">
-          {/* <div className="sidebar-section">
-            <p className="sidebar-section-title">Configuration</p>
+          <div className="sidebar-section">
+            <p className="sidebar-section-title">Filter</p>
 
             <div className="field">
-              <label htmlFor="players-select">Players</label>
-              <select id="players-select" defaultValue="4">
-                <option value="4">4 Players</option>
-                <option value="5">5 Players</option>
-                <option value="6">6 Players</option>
+              <label htmlFor="maps-select">Maps</label>
+              <select
+                id="maps-select"
+                defaultValue="all"
+                onChange={(e) => setFilteredMaps(Number(e.target.value))}
+              >
+                <option value="0">All</option>
+                <option value="2">2 Player</option>
+                <option value="3">3 Player</option>
+                <option value="4">4 Player</option>
               </select>
             </div>
-
-            <div className="field">
-              <label htmlFor="shape-select">Board Shape</label>
-              <select id="shape-select" defaultValue="normal">
-                <option value="normal">Normal</option>
-                <option value="large">Large</option>
-                <option value="small">Small (Warp)</option>
-              </select>
-            </div>
-          </div> */}
+          </div>
 
           <div className="sidebar-section">
             <p className="sidebar-section-title">Legend</p>
@@ -74,351 +71,361 @@ function App() {
 
         {/* ── Main content ── */}
         <main className="main-content">
-          <section className="galaxy-section">
-            <h2 className="galaxy-section-heading">Trade Wars</h2>
-            <p className="galaxy-section-sub">2 players | 24 tiles</p>
+          {(filteredMaps === 0 || filteredMaps === 2) && (
+            <section className="galaxy-section">
+              <h2 className="galaxy-section-heading">Trade Wars</h2>
+              <p className="galaxy-section-sub">2 players | 24 tiles</p>
 
-            <div className="hex-grid-wrapper">
-              <TradeWars />
+              <div className="hex-grid-wrapper">
+                <TradeWars />
 
-              <div className="instructions">
-                <p>
-                  Uses the{" "}
-                  <a
-                    href="https://boardgamegeek.com/thread/2114639/trade-wars-2-player-variant"
-                    target="_blank"
-                  >
-                    Trade Wars 2 player variant by Andy Norton
-                  </a>
-                  .
-                </p>
-                <ul>
-                  <li>
-                    Select 10 blue tiles at random, but make sure to include
-                    some or all of the following:
-                    <ul>
-                      <li>Atlas (Beta Wormhole)</li>
-                      <li>Lodor (Alpha Wormhole)</li>
-                      <li>Primor (Legendary)</li>
-                      <li>Hope's End (Legendary)</li>
-                    </ul>
-                  </li>
-                  <li>
-                    Select 8 8 red tiles at random, but make sure to include:
-                    <ul>
-                      <li>Cormund (Gravity Rift)</li>
-                      <li>Everra (Nebula)</li>
-                      <li>1x Alpha Wormhole</li>
-                      <li>1x Beta Wormhole</li>
-                    </ul>
-                    You may wish to remove the empty space tiles, depending on
-                    your game preference.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="galaxy-section">
-            <h2 className="galaxy-section-heading">Compact</h2>
-            <p className="galaxy-section-sub">3 players | 19 tiles</p>
-
-            <div className="hex-grid-wrapper">
-              <Compact />
-
-              <div className="instructions">
-                <p>
-                  A smaller setup that makes it very easy for players to get to
-                  Mecatol Rex in the first round. A possible variant of this is
-                  to completed avoid using wormhole tiles.
-                </p>
-                <ul>
-                  <li>
-                    Select 12 blue tiles at random, but make sure to include
-                    some or all of the following:
-                    <ul>
-                      <li>Atlas (Beta Wormhole)</li>
-                      <li>Lodor (Alpha Wormhole)</li>
-                      <li>Primor (Legendary)</li>
-                      <li>Hope's End (Legendary)</li>
-                    </ul>
-                  </li>
-                  <li>
-                    Select 3 red tiles at random, but make sure to include:
-                    <ul>
-                      <li>1x Alpha Wormhole</li>
-                      <li>1x Beta Wormhole</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="galaxy-section">
-            <h2 className="galaxy-section-heading">Manta</h2>
-            <p className="galaxy-section-sub">3 players | 23 tiles</p>
-
-            <div className="hex-grid-wrapper">
-              <Manta />
-
-              <div className="instructions">
-                <p>
-                  Provides 3 dedicated blue tiles for each player and a red
-                  barrier to pass through to reach Mecatol Rex.
-                </p>
-                <ul>
-                  <li>
-                    Select 12 blue tiles at random, but make sure to include
-                    some or all of the following:
-                    <ul>
-                      <li>Atlas (Beta Wormhole)</li>
-                      <li>Lodor (Alpha Wormhole)</li>
-                      <li>Primor (Legendary)</li>
-                      <li>Hope's End (Legendary)</li>
-                      <li>Quann (Beta Wormhole)</li>
-                    </ul>
-                  </li>
-                  <li>
-                    Select 7 red tiles at random, but make sure to include:
-                    <ul>
-                      <li>Cormund (Gravity Rift)</li>
-                      <li>Everra (Nebula)</li>
-                      <li>1x Alpha Wormhole</li>
-                      <li>1x Beta Wormhole</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="galaxy-section">
-            <h2 className="galaxy-section-heading">Triangle</h2>
-            <p className="galaxy-section-sub">3 players | 28 tiles</p>
-
-            <div className="hex-grid-wrapper">
-              {showTriangleLines ? <TriangleLines /> : <TriangleRing />}
-
-              <div className="variant-toggle-container">
-                <div className="variant-toggle">
-                  <button
-                    className={`variant-toggle-btn${showTriangleLines ? " variant-toggle-btn--active" : ""}`}
-                    onClick={() => setShowTriangleLines(true)}
-                  >
-                    Lines
-                  </button>
-                  <button
-                    className={`variant-toggle-btn${!showTriangleLines ? " variant-toggle-btn--active" : ""}`}
-                    onClick={() => setShowTriangleLines(false)}
-                  >
-                    Ring
-                  </button>
+                <div className="instructions">
+                  <p>
+                    Uses the{" "}
+                    <a
+                      href="https://boardgamegeek.com/thread/2114639/trade-wars-2-player-variant"
+                      target="_blank"
+                    >
+                      Trade Wars 2 player variant by Andy Norton
+                    </a>
+                    .
+                  </p>
+                  <ul>
+                    <li>
+                      Select 10 blue tiles at random, but make sure to include
+                      some or all of the following:
+                      <ul>
+                        <li>Atlas (Beta Wormhole)</li>
+                        <li>Lodor (Alpha Wormhole)</li>
+                        <li>Primor (Legendary)</li>
+                        <li>Hope's End (Legendary)</li>
+                      </ul>
+                    </li>
+                    <li>
+                      Select 8 8 red tiles at random, but make sure to include:
+                      <ul>
+                        <li>Cormund (Gravity Rift)</li>
+                        <li>Everra (Nebula)</li>
+                        <li>1x Alpha Wormhole</li>
+                        <li>1x Beta Wormhole</li>
+                      </ul>
+                      You may wish to remove the empty space tiles, depending on
+                      your game preference.
+                    </li>
+                  </ul>
                 </div>
               </div>
+            </section>
+          )}
 
-              <div className="instructions">
-                <p>
-                  Players start at the three points of the triangle. One variant
-                  has two red tiles in the path towards Mecatol Rex, the other
-                  has red tiles surrounding Mecatol Rex.
-                </p>
-                <ul>
-                  <li>
-                    Select 18 blue tiles at random, but make sure to include
-                    some or all of the following:
+          {(filteredMaps === 0 || filteredMaps === 3) && (
+            <>
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Compact</h2>
+                <p className="galaxy-section-sub">3 players | 19 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <Compact />
+
+                  <div className="instructions">
+                    <p>
+                      A smaller setup that makes it very easy for players to get
+                      to Mecatol Rex in the first round. A possible variant of
+                      this is to completed avoid using wormhole tiles.
+                    </p>
                     <ul>
-                      <li>Atlas (Beta Wormhole)</li>
-                      <li>Lodor (Alpha Wormhole)</li>
-                      <li>Primor (Legendary)</li>
-                      <li>Hope's End (Legendary)</li>
-                      <li>Quann (Beta Wormhole)</li>
+                      <li>
+                        Select 12 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select 3 red tiles at random, but make sure to include:
+                        <ul>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                  <li>
-                    Select 6 red tiles at random, but make sure to include:
+                  </div>
+                </div>
+              </section>
+
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Manta</h2>
+                <p className="galaxy-section-sub">3 players | 23 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <Manta />
+
+                  <div className="instructions">
+                    <p>
+                      Provides 3 dedicated blue tiles for each player and a red
+                      barrier to pass through to reach Mecatol Rex.
+                    </p>
                     <ul>
-                      <li>Cormund (Gravity Rift)</li>
-                      <li>Everra (Nebula)</li>
-                      <li>1x Alpha Wormhole</li>
-                      <li>1x Beta Wormhole</li>
+                      <li>
+                        Select 12 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select 7 red tiles at random, but make sure to include:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
+                  </div>
+                </div>
+              </section>
 
-          <section className="galaxy-section">
-            <h2 className="galaxy-section-heading">Brave the Void</h2>
-            <p className="galaxy-section-sub">4 players | 37 tiles</p>
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Triangle</h2>
+                <p className="galaxy-section-sub">3 players | 28 tiles</p>
 
-            <div className="hex-grid-wrapper">
-              <BraveTheVoid />
+                <div className="hex-grid-wrapper">
+                  {showTriangleLines ? <TriangleLines /> : <TriangleRing />}
 
-              <div className="instructions">
-                <p>
-                  This setup uses the "Brave the void" pattern from the base
-                  game and mixes in guaranteed tiles for balance. It aims to
-                  allow enough wormholes for strategic use whilst avoiding
-                  wormhole spam.
-                </p>
-                <ul>
-                  <li>
-                    Select 20 blue tiles at random, but make sure to include
-                    some or all of the following:
+                  <div className="variant-toggle-container">
+                    <div className="variant-toggle">
+                      <button
+                        className={`variant-toggle-btn${showTriangleLines ? " variant-toggle-btn--active" : ""}`}
+                        onClick={() => setShowTriangleLines(true)}
+                      >
+                        Lines
+                      </button>
+                      <button
+                        className={`variant-toggle-btn${!showTriangleLines ? " variant-toggle-btn--active" : ""}`}
+                        onClick={() => setShowTriangleLines(false)}
+                      >
+                        Ring
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="instructions">
+                    <p>
+                      Players start at the three points of the triangle. One
+                      variant has two red tiles in the path towards Mecatol Rex,
+                      the other has red tiles surrounding Mecatol Rex.
+                    </p>
                     <ul>
-                      <li>Atlas (Beta Wormhole)</li>
-                      <li>Lodor (Alpha Wormhole)</li>
-                      <li>Primor (Legendary)</li>
-                      <li>Hope's End (Legendary)</li>
-                      <li>Quann (Beta Wormhole)</li>
+                      <li>
+                        Select 18 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select 6 red tiles at random, but make sure to include:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                  <li>
-                    Select the following 12 red tiles:
+                  </div>
+                </div>
+              </section>
+            </>
+          )}
+
+          {(filteredMaps === 0 || filteredMaps === 4) && (
+            <>
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Brave the Void</h2>
+                <p className="galaxy-section-sub">4 players | 37 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <BraveTheVoid />
+
+                  <div className="instructions">
+                    <p>
+                      This setup uses the "Brave the void" pattern from the base
+                      game and mixes in guaranteed tiles for balance. It aims to
+                      allow enough wormholes for strategic use whilst avoiding
+                      wormhole spam.
+                    </p>
                     <ul>
-                      <li>Cormund (Gravity Rift)</li>
-                      <li>Everra (Nebula)</li>
-                      <li>1x Alpha Wormhole</li>
-                      <li>1x Asteroid Field</li>
-                      <li>1x Asteroid Field with Alpha Wormhole</li>
-                      <li>1x Beta Wormhole</li>
-                      <li>3x Empty Space</li>
-                      <li>1x Gravity Rift</li>
-                      <li>1x Nebula</li>
-                      <li>1x Supernova</li>
+                      <li>
+                        Select 20 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select the following 12 red tiles:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Asteroid Field</li>
+                          <li>1x Asteroid Field with Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                          <li>3x Empty Space</li>
+                          <li>1x Gravity Rift</li>
+                          <li>1x Nebula</li>
+                          <li>1x Supernova</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
+                  </div>
+                </div>
+              </section>
 
-          <section>
-            <h2 className="galaxy-section-heading">Rectangle</h2>
-            <p className="galaxy-section-sub">4 players | 31 tiles</p>
+              <section>
+                <h2 className="galaxy-section-heading">Rectangle</h2>
+                <p className="galaxy-section-sub">4 players | 31 tiles</p>
 
-            <div className="hex-grid-wrapper">
-              <Rectangle />
+                <div className="hex-grid-wrapper">
+                  <Rectangle />
 
-              <div className="instructions">
-                <p>
-                  This horizontal setup uses 6 less tiles (4 blue and 2 red)
-                  than the normal setup. There are still some guaranteed tiles
-                  for balance, but the red tile pattern often leads to more
-                  territory disputes.
-                </p>
-                <ul>
-                  <li>
-                    Select 16 blue tiles at random, but the recommended ones to
-                    include are:
+                  <div className="instructions">
+                    <p>
+                      This horizontal setup uses 6 less tiles (4 blue and 2 red)
+                      than the normal setup. There are still some guaranteed
+                      tiles for balance, but the red tile pattern often leads to
+                      more territory disputes.
+                    </p>
                     <ul>
-                      <li>Atlas (Beta Wormhole)</li>
-                      <li>Lodor (Alpha Wormhole)</li>
-                      <li>Primor (Legendary)</li>
-                      <li>Hope's End (Legendary)</li>
+                      <li>
+                        Select 16 blue tiles at random, but the recommended ones
+                        to include are:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        The recommended 10 red tiles:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>2x Asteroid Field</li>
+                          <li>1x Asteroid Field with Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                          <li>1x Empty Space</li>
+                          <li>1x Gravity Rift</li>
+                          <li>1x Nebula</li>
+                          <li>1x Supernova</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                  <li>
-                    The recommended 10 red tiles:
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="galaxy-section-heading">Rectangle Plus</h2>
+                <p className="galaxy-section-sub">4 players | 37 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <RectanglePlus />
+
+                  <div className="instructions">
+                    <p>
+                      Uses the Rectangle setup with the 37 tiles of the Brave
+                      the Void setup.
+                    </p>
                     <ul>
-                      <li>Cormund (Gravity Rift)</li>
-                      <li>Everra (Nebula)</li>
-                      <li>2x Asteroid Field</li>
-                      <li>1x Asteroid Field with Alpha Wormhole</li>
-                      <li>1x Beta Wormhole</li>
-                      <li>1x Empty Space</li>
-                      <li>1x Gravity Rift</li>
-                      <li>1x Nebula</li>
-                      <li>1x Supernova</li>
+                      <li>
+                        Select 20 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select the following 12 red tiles:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Asteroid Field</li>
+                          <li>1x Asteroid Field with Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                          <li>3x Empty Space</li>
+                          <li>1x Gravity Rift</li>
+                          <li>1x Nebula</li>
+                          <li>1x Supernova</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
+                  </div>
+                </div>
+              </section>
 
-          <section>
-            <h2 className="galaxy-section-heading">Rectangle Plus</h2>
-            <p className="galaxy-section-sub">4 players | 37 tiles</p>
+              <section>
+                <h2 className="galaxy-section-heading">Gaps</h2>
+                <p className="galaxy-section-sub">4 players | 29 tiles</p>
 
-            <div className="hex-grid-wrapper">
-              <RectanglePlus />
+                <div className="hex-grid-wrapper">
+                  <Gaps />
 
-              <div className="instructions">
-                <p>
-                  Uses the Rectangle setup with the 37 tiles of the Brave the
-                  Void setup.
-                </p>
-                <ul>
-                  <li>
-                    Select 20 blue tiles at random, but make sure to include
-                    some or all of the following:
+                  <div className="instructions">
+                    <p>
+                      Similar to the Rectangle setup, flipped 90 degrees and has
+                      a further 2 missing tiles on either side of Mecatol Rex.
+                    </p>
                     <ul>
-                      <li>Atlas (Beta Wormhole)</li>
-                      <li>Lodor (Alpha Wormhole)</li>
-                      <li>Primor (Legendary)</li>
-                      <li>Hope's End (Legendary)</li>
-                      <li>Quann (Beta Wormhole)</li>
+                      <li>
+                        Select 14 blue tiles at random, but the recommended ones
+                        to include are:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select 6 red tiles at random, but make sure to include:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                  <li>
-                    Select the following 12 red tiles:
-                    <ul>
-                      <li>Cormund (Gravity Rift)</li>
-                      <li>Everra (Nebula)</li>
-                      <li>1x Alpha Wormhole</li>
-                      <li>1x Asteroid Field</li>
-                      <li>1x Asteroid Field with Alpha Wormhole</li>
-                      <li>1x Beta Wormhole</li>
-                      <li>3x Empty Space</li>
-                      <li>1x Gravity Rift</li>
-                      <li>1x Nebula</li>
-                      <li>1x Supernova</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="galaxy-section-heading">Gaps</h2>
-            <p className="galaxy-section-sub">4 players | 29 tiles</p>
-
-            <div className="hex-grid-wrapper">
-              <Gaps />
-
-              <div className="instructions">
-                <p>
-                  Similar to the Rectangle setup, flipped 90 degrees and has a
-                  further 2 missing tiles on either side of Mecatol Rex.
-                </p>
-                <ul>
-                  <li>
-                    Select 14 blue tiles at random, but the recommended ones to
-                    include are:
-                    <ul>
-                      <li>Atlas (Beta Wormhole)</li>
-                      <li>Lodor (Alpha Wormhole)</li>
-                      <li>Primor (Legendary)</li>
-                      <li>Hope's End (Legendary)</li>
-                    </ul>
-                  </li>
-                  <li>
-                    Select 6 red tiles at random, but make sure to include:
-                    <ul>
-                      <li>Cormund (Gravity Rift)</li>
-                      <li>Everra (Nebula)</li>
-                      <li>1x Alpha Wormhole</li>
-                      <li>1x Beta Wormhole</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
+                  </div>
+                </div>
+              </section>
+            </>
+          )}
         </main>
       </div>
     </div>
