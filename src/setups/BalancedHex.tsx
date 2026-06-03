@@ -1,7 +1,7 @@
 import Grid from "../common/Grid";
 import { BlueTile, MecatolTile, PlayerTile, RedTile } from "../common/Tiles";
 
-const BraveTheVoid = () => {
+const BalancedHex = () => {
   return (
     <Grid viewBox="-59 -63 118 126">
       <>
@@ -60,4 +60,4 @@ const BraveTheVoid = () => {
   );
 };
 
-export default BraveTheVoid;
+export default BalancedHex;

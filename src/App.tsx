@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import BraveTheVoid from "./setups/BraveTheVoid";
+import BalancedHex from "./setups/BalancedHex";
 import Compact from "./setups/Compact";
 import Gaps from "./setups/Gaps";
 import Manta from "./setups/Manta";
@@ -255,18 +255,16 @@ function App() {
           {(filteredMaps === 0 || filteredMaps === 4) && (
             <>
               <section className="galaxy-section">
-                <h2 className="galaxy-section-heading">Brave the Void</h2>
+                <h2 className="galaxy-section-heading">Balanced Hex</h2>
                 <p className="galaxy-section-sub">4 players | 37 tiles</p>
 
                 <div className="hex-grid-wrapper">
-                  <BraveTheVoid />
+                  <BalancedHex />
 
                   <div className="instructions">
                     <p>
-                      This setup uses the "Brave the void" pattern from the base
-                      game and mixes in guaranteed tiles for balance. It aims to
-                      allow enough wormholes for strategic use whilst avoiding
-                      wormhole spam.
+                      Uses the 4 player setup from the base game rule book with
+                      a red tile barrier pattern and a balance of blue tiles.
                     </p>
                     <ul>
                       <li>
