@@ -6,6 +6,7 @@ import {
 } from "./setups/BalancedHex";
 import Compact from "./setups/Compact";
 import Diamond from "./setups/Diamond";
+import Flat from "./setups/Flat";
 import Gaps from "./setups/Gaps";
 import Manta from "./setups/Manta";
 import Rectangle from "./setups/Rectangle";
@@ -107,7 +108,7 @@ function App() {
                       </ul>
                     </li>
                     <li>
-                      Select 8 8 red tiles at random, but make sure to include:
+                      Select 8 red tiles at random, but make sure to include:
                       <ul>
                         <li>Cormund (Gravity Rift)</li>
                         <li>Everra (Nebula)</li>
@@ -507,6 +508,41 @@ function App() {
                       </li>
                       <li>
                         Select 6 red tiles at random, but make sure to include:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Flat</h2>
+                <p className="galaxy-section-sub">5 players | 38 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <Flat />
+
+                  <div className="instructions">
+                    <p>Similar to Manta but with 9 columns.</p>
+                    <ul>
+                      <li>
+                        Select 22 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select 10 red tiles at random, but make sure to include:
                         <ul>
                           <li>Cormund (Gravity Rift)</li>
                           <li>Everra (Nebula)</li>
