@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import BalancedHex from "./setups/BalancedHex";
+import {
+  BalancedHexFourPlayer,
+  BalancedHexFivePlayer,
+} from "./setups/BalancedHex";
 import Compact from "./setups/Compact";
 import Gaps from "./setups/Gaps";
 import Manta from "./setups/Manta";
@@ -38,6 +41,7 @@ function App() {
                 <option value="2">2 Player</option>
                 <option value="3">3 Player</option>
                 <option value="4">4 Player</option>
+                <option value="5">5 Player</option>
               </select>
             </div>
           </div>
@@ -259,7 +263,7 @@ function App() {
                 <p className="galaxy-section-sub">4 players | 37 tiles</p>
 
                 <div className="hex-grid-wrapper">
-                  <BalancedHex />
+                  <BalancedHexFourPlayer />
 
                   <div className="instructions">
                     <p>
@@ -416,6 +420,58 @@ function App() {
                           <li>Everra (Nebula)</li>
                           <li>1x Alpha Wormhole</li>
                           <li>1x Beta Wormhole</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </>
+          )}
+
+          {(filteredMaps === 0 || filteredMaps === 5) && (
+            <>
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Balanced Hex</h2>
+                <p className="galaxy-section-sub">5 players | 37 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <BalancedHexFivePlayer />
+
+                  <div className="instructions">
+                    <p>
+                      Uses the 5 player setup from the base game rule book with
+                      a red tile barrier pattern and a balance of blue tiles.
+                      Because of the imbalance of tiles, the rule book assigns 2
+                      trade goods to the player at 2 o'clock, 4 trade goods to
+                      the player at 4 o'clock and 2 trade goods to the player at
+                      6 o'clock.
+                    </p>
+                    <ul>
+                      <li>
+                        Select 19 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select the following 12 red tiles:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Asteroid Field</li>
+                          <li>1x Asteroid Field with Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                          <li>3x Empty Space</li>
+                          <li>1x Gravity Rift</li>
+                          <li>1x Nebula</li>
+                          <li>1x Supernova</li>
                         </ul>
                       </li>
                     </ul>
