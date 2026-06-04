@@ -9,6 +9,7 @@ import Diamond from "./setups/Diamond";
 import Flat from "./setups/Flat";
 import Gaps from "./setups/Gaps";
 import Manta from "./setups/Manta";
+import Notch from "./setups/Notch";
 import Rectangle from "./setups/Rectangle";
 import RectanglePlus from "./setups/RectanglePlus";
 import TradeWars from "./setups/TradeWars";
@@ -570,6 +571,50 @@ function App() {
                           <li>Everra (Nebula)</li>
                           <li>1x Alpha Wormhole</li>
                           <li>1x Beta Wormhole</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Notch</h2>
+                <p className="galaxy-section-sub">5 players | 35 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <Notch />
+
+                  <div className="instructions">
+                    <p>
+                      Very similar to the Balanced Hex, but with a gap to allow
+                      better spacing.
+                    </p>
+                    <ul>
+                      <li>
+                        Select 18 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select the following 11 red tiles:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Asteroid Field</li>
+                          <li>1x Asteroid Field with Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                          <li>2x Empty Space</li>
+                          <li>1x Gravity Rift</li>
+                          <li>1x Nebula</li>
+                          <li>1x Supernova</li>
                         </ul>
                       </li>
                     </ul>
