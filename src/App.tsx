@@ -4,7 +4,7 @@ import {
   BalancedHexFourPlayer,
   BalancedHexFivePlayer,
 } from "./setups/BalancedHex";
-import Compact from "./setups/Compact";
+import { CompactOffset, CompactSymmetrical } from "./setups/Compact";
 import Diamond from "./setups/Diamond";
 import Flat from "./setups/Flat";
 import Gaps from "./setups/Gaps";
@@ -16,6 +16,7 @@ import { TriangleLines, TriangleRing } from "./setups/Triangle";
 
 function App() {
   const [showTriangleLines, setShowTriangleLines] = useState(true);
+  const [showCompactOffset, setShowCompactOffset] = useState(true);
   const [filteredMaps, setFilteredMaps] = useState<number>(0);
 
   return (
@@ -131,7 +132,28 @@ function App() {
                 <p className="galaxy-section-sub">3 players | 19 tiles</p>
 
                 <div className="hex-grid-wrapper">
-                  <Compact />
+                  {showCompactOffset ? (
+                    <CompactOffset />
+                  ) : (
+                    <CompactSymmetrical />
+                  )}
+
+                  <div className="variant-toggle-container">
+                    <div className="variant-toggle">
+                      <button
+                        className={`variant-toggle-btn${showCompactOffset ? " variant-toggle-btn--active" : ""}`}
+                        onClick={() => setShowCompactOffset(true)}
+                      >
+                        Offset
+                      </button>
+                      <button
+                        className={`variant-toggle-btn${!showCompactOffset ? " variant-toggle-btn--active" : ""}`}
+                        onClick={() => setShowCompactOffset(false)}
+                      >
+                        Symmetry
+                      </button>
+                    </div>
+                  </div>
 
                   <div className="instructions">
                     <p>
