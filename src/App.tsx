@@ -3,6 +3,7 @@ import "./App.css";
 import {
   BalancedHexFourPlayer,
   BalancedHexFivePlayer,
+  BalancedHexSixPlayer,
 } from "./setups/BalancedHex";
 import { CompactOffset, CompactSymmetrical } from "./setups/Compact";
 import Diamond from "./setups/Diamond";
@@ -612,6 +613,54 @@ function App() {
                           <li>1x Asteroid Field with Alpha Wormhole</li>
                           <li>1x Beta Wormhole</li>
                           <li>2x Empty Space</li>
+                          <li>1x Gravity Rift</li>
+                          <li>1x Nebula</li>
+                          <li>1x Supernova</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </>
+          )}
+
+          {(filteredMaps === 0 || filteredMaps === 6) && (
+            <>
+              <section className="galaxy-section">
+                <h2 className="galaxy-section-heading">Balanced Hex</h2>
+                <p className="galaxy-section-sub">6 players | 37 tiles</p>
+
+                <div className="hex-grid-wrapper">
+                  <BalancedHexSixPlayer />
+
+                  <div className="instructions">
+                    <p>
+                      Uses the 6 player setup from the base game rule book with
+                      a red tile barrier pattern and a balance of blue tiles.
+                    </p>
+                    <ul>
+                      <li>
+                        Select 18 blue tiles at random, but make sure to include
+                        some or all of the following:
+                        <ul>
+                          <li>Atlas (Beta Wormhole)</li>
+                          <li>Lodor (Alpha Wormhole)</li>
+                          <li>Primor (Legendary)</li>
+                          <li>Hope's End (Legendary)</li>
+                          <li>Quann (Beta Wormhole)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Select the following 12 red tiles:
+                        <ul>
+                          <li>Cormund (Gravity Rift)</li>
+                          <li>Everra (Nebula)</li>
+                          <li>1x Alpha Wormhole</li>
+                          <li>1x Asteroid Field</li>
+                          <li>1x Asteroid Field with Alpha Wormhole</li>
+                          <li>1x Beta Wormhole</li>
+                          <li>3x Empty Space</li>
                           <li>1x Gravity Rift</li>
                           <li>1x Nebula</li>
                           <li>1x Supernova</li>
